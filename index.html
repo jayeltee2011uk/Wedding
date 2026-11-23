@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarah &amp; Jamie's Wedding — 4th September 2027</title>
+
+  <!-- Google Fonts: Cinzel (Gothic-Editorial Display), Cormorant Garamond (Romantic Serif), Plus Jakarta Sans (Clean Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              950: '#110C0A',
+              900: '#16100E',
+              800: '#1D1512',
+              700: '#271C18',
+              600: '#352620',
+            },
+            parchment: {
+              50: '#FBF7F2',
+              100: '#F4ECE2',
+              200: '#E4D6C5',
+              300: '#CBB9A4',
+              400: '#9F8B77',
+            },
+            rust: {
+              300: '#E58A68',
+              400: '#D66943',
+              500: '#C24D26',
+              600: '#A33C1A',
+              700: '#7D2B10',
+              900: '#3F1407',
+            },
+            brass: {
+              200: '#EDD5A6',
+              300: '#DFBE82',
+              400: '#C99A4E',
+              500: '#B08138',
+              600: '#8A6224',
+            },
+          },
+          fontFamily: {
+            display: ['"Cinzel"', 'Georgia', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          boxShadow: {
+            keepsake: '0 28px 70px -15px rgba(0, 0, 0, 0.75), 0 0 40px -10px rgba(194, 77, 38, 0.16)',
+            card: '0 14px 36px -12px rgba(0, 0, 0, 0.55)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Moody Autumnal Paper Grain & Atmospheric Glow */
+    body {
+      background-color: #16100E;
+      color: #F4ECE2;
+      font-feature-settings: "kern" 1, "liga" 1;
+    }
+
+    .autumn-atmosphere {
+      background-image:
+        radial-gradient(circle at 18% 12%, rgba(194, 77, 38, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 84% 78%, rgba(201, 154, 78, 0.12) 0%, transparent 48%),
+        radial-gradient(circle at 50% 50%, rgba(39, 28, 24, 0.65) 0%, rgba(22, 16, 14, 1) 100%);
+    }
+
+    .paper-grain {
+      background-image: radial-gradient(rgba(244, 236, 226, 0.03) 1px, transparent 0);
+      background-size: 22px 22px;
+    }
+
+    /* Smooth Reveal Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+
+    /* Custom Form Inputs */
+    .editorial-input {
+      transition: all 0.25s ease;
+    }
+    .editorial-input:focus {
+      outline: none;
+      border-color: #C99A4E;
+      box-shadow: 0 0 0 3px rgba(201, 154, 78, 0.18);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #16100E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #352620;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C24D26;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-rust-500/40 selection:text-parchment-50 overflow-x-hidden">
+
+  <!-- Top Minimal Navigation -->
+  <header class="sticky top-0 z-40 bg-obsidian-900/85 backdrop-blur-md border-b border-obsidian-600/80 transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+      <button type="button" id="monogramTrigger" class="font-display text-xl tracking-[0.2em] text-parchment-100 font-medium flex items-center gap-2 select-none bg-transparent border-0 p-2 -ml-2 cursor-pointer focus:outline-none">
+        <span>S</span>
+        <span class="text-brass-400 font-serif italic text-2xl">&amp;</span>
+        <span>J</span>
+      </button>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.22em] text-parchment-300 font-medium">
+        <a href="#details" class="hover:text-brass-300 transition-colors">The Gathering</a>
+        <a href="#honeymoon" class="hover:text-brass-300 transition-colors">Honeymoon</a>
+        <a href="#rsvp" class="hover:text-brass-300 transition-colors">RSVP</a>
+        <a href="#wishes" class="hover:text-brass-300 transition-colors">Guestbook</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button
+          type="button"
+          onclick="toggleHostModal(true)"
+          class="text-xs uppercase tracking-[0.18em] px-4 py-2.5 rounded-full border border-brass-500/50 text-brass-200 hover:bg-obsidian-800 hover:border-brass-400 transition-all"
+        >
+          Couple's View
+        </button>
+        <a
+          href="#rsvp"
+          class="text-xs uppercase tracking-[0.2em] px-5 py-2.5 rounded-full bg-rust-500 text-parchment-50 hover:bg-rust-600 transition-all shadow-md shadow-black/40"
+        >
+          RSVP
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION: FRAMED KEEPSAKE INVITATION -->
+  <section id="top" class="relative autumn-atmosphere paper-grain pt-12 pb-20 sm:pt-20 sm:pb-28 px-4 sm:px-8 border-b border-obsidian-600/70 overflow-hidden">
+    <!-- Decorative Autumn Fern & Crescent SVG Top Left -->
+    <svg class="hidden lg:block absolute top-10 left-10 w-52 h-52 text-brass-400/20 pointer-events-none" viewBox="0 0 220 220" fill="none">
+      <path d="M24 196C68 134 122 78 196 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M58 152C42 132 47 104 68 94C79 115 74 137 58 152Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M98 114C82 94 87 66 108 56C119 77 114 99 98 114Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M138 78C122 58 127 32 148 22C158 42 153 63 138 78Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M88 124C108 140 136 135 146 114C125 103 103 108 88 124Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M128 86C148 102 176 97 186 76C165 65 143 70 128 86Z" stroke="currentColor" stroke-width="1.1"/>
+      <circle cx="42" cy="54" r="2" fill="currentColor"/>
+      <path d="M72 34L74 40L80 42L74 44L72 50L70 44L64 42L70 40L72 34Z" fill="currentColor"/>
+    </svg>
+
+    <!-- Decorative Autumn Fern & Crescent SVG Bottom Right -->
+    <svg class="hidden lg:block absolute bottom-10 right-10 w-52 h-52 text-rust-400/20 rotate-180 pointer-events-none" viewBox="0 0 220 220" fill="none">
+      <path d="M24 196C68 134 122 78 196 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M58 152C42 132 47 104 68 94C79 115 74 137 58 152Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M98 114C82 94 87 66 108 56C119 77 114 99 98 114Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M88 124C108 140 136 135 146 114C125 103 103 108 88 124Z" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M128 86C148 102 176 97 186 76C165 65 143 70 128 86Z" stroke="currentColor" stroke-width="1.1"/>
+    </svg>
+
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Keepsake Dark Invitation Card -->
+      <div class="mx-auto max-w-2xl bg-obsidian-800/95 border border-brass-500/45 rounded-t-[13rem] rounded-b-3xl px-6 py-14 sm:px-14 sm:py-20 shadow-keepsake relative">
+        <!-- Inner Tarnished Brass Hairline Border -->
+        <div class="absolute inset-3 border border-brass-400/25 rounded-t-[12.2rem] rounded-b-2xl pointer-events-none"></div>
+
+        <!-- Crescent Moon & Starlight Crest -->
+        <div class="animate-fade-up flex items-center justify-center gap-3 mb-5 text-brass-400">
+          <span class="h-px w-8 bg-brass-500/40"></span>
+          <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none">
+            <path
+              d="M21.5 22.8C15.9 22.8 11.4 18.3 11.4 12.7C11.4 9.2 13.2 6.1 15.9 4.3C10.5 4.8 6.3 9.3 6.3 14.9C6.3 20.8 11.1 25.6 17 25.6C20.5 25.6 23.6 23.9 25.5 21.3C24.3 22.2 22.9 22.8 21.5 22.8Z"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path d="M23 7L23.9 9.6L26.5 10.5L23.9 11.4L23 14L22.1 11.4L19.5 10.5L22.1 9.6L23 7Z" fill="currentColor"/>
+          </svg>
+          <span class="h-px w-8 bg-brass-500/40"></span>
+        </div>
+
+        <p class="animate-fade-up text-xs sm:text-sm uppercase tracking-[0.32em] text-brass-300 font-medium mb-5">
+          Together with their friends and families
+        </p>
+
+        <h1 class="animate-fade-up delay-100 font-display text-4xl sm:text-6xl lg:text-[3.85rem] font-normal text-parchment-50 leading-[1.15] tracking-wide">
+          Sarah <span class="font-serif italic text-rust-400 font-normal text-5xl sm:text-7xl">&amp;</span> Jamie's<br />
+          <span class="font-serif italic text-3xl sm:text-5xl text-parchment-200 tracking-normal">Wedding</span>
+        </h1>
+
+        <div class="animate-fade-up delay-200 flex items-center justify-center gap-4 my-7">
+          <span class="h-px w-14 bg-gradient-to-r from-transparent to-brass-400/70"></span>
+          <svg class="w-4 h-4 text-rust-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
+          </svg>
+          <span class="h-px w-14 bg-gradient-to-l from-transparent to-brass-400/70"></span>
+        </div>
+
+        <p class="animate-fade-up delay-200 font-serif text-2xl sm:text-3xl text-brass-200 italic mb-2">
+          Saturday, 4th September 2027 &bull; 12:00 PM
+        </p>
+        <p class="animate-fade-up delay-200 text-xs sm:text-sm uppercase tracking-[0.24em] text-parchment-300 mb-10">
+          The Hare &amp; Hounds &bull; Westonbirt, Tetbury
+        </p>
+
+        <!-- Countdown Pill -->
+        <div id="countdownBar" class="animate-fade-up delay-300 inline-flex flex-wrap justify-center gap-4 sm:gap-7 px-6 py-3.5 rounded-2xl bg-obsidian-900/90 border border-brass-500/35 mb-10 text-parchment-100">
+          <div class="text-center">
+            <span id="cd-days" class="block font-display text-2xl sm:text-3xl font-semibold text-rust-400">--</span>
+            <span class="text-[10px] uppercase tracking-[0.22em] text-parchment-400">Days</span>
+          </div>
+          <span class="text-brass-500 self-center font-serif text-xl">&bull;</span>
+          <div class="text-center">
+            <span id="cd-hours" class="block font-display text-2xl sm:text-3xl font-semibold text-rust-400">--</span>
+            <span class="text-[10px] uppercase tracking-[0.22em] text-parchment-400">Hours</span>
+          </div>
+          <span class="text-brass-500 self-center font-serif text-xl">&bull;</span>
+          <div class="text-center">
+            <span id="cd-mins" class="block font-display text-2xl sm:text-3xl font-semibold text-rust-400">--</span>
+            <span class="text-[10px] uppercase tracking-[0.22em] text-parchment-400">Mins</span>
+          </div>
+        </div>
+
+        <div class="animate-fade-up delay-300">
+          <a
+            href="#rsvp"
+            class="inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full bg-rust-500 text-parchment-50 text-xs sm:text-sm uppercase tracking-[0.24em] font-medium hover:bg-rust-600 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-black/50 border border-rust-300/30"
+          >
+            <span>RSVP Now</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+          <p class="mt-4 text-xs text-parchment-400 tracking-wider italic font-serif text-base">
+            Kindly reply by 28th February 2027
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WEDDING DETAILS SECTION -->
+  <section id="details" class="py-20 sm:py-28 px-4 sm:px-8 max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs uppercase tracking-[0.3em] text-brass-400 font-semibold">The Celebration</span>
+      <h2 class="font-display text-3xl sm:text-5xl text-parchment-50 mt-3 mb-4">Order of the Day &amp; Details</h2>
+      <p class="text-parchment-300 text-sm sm:text-base leading-relaxed">
+        Tucked amidst ancient Cotswold woodland and walled gardens as summer turns to autumn, we invite you to gather with us from midday.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Card 1: Order of the Day -->
+      <div class="bg-obsidian-800 border border-obsidian-600 rounded-2xl p-7 shadow-card hover:border-brass-500/60 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-11 h-11 rounded-full bg-rust-900/70 border border-rust-500/40 text-rust-300 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2" />
+            </svg>
+          </div>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-brass-400 font-semibold mb-1.5">Timeline</p>
+          <h3 class="font-serif text-3xl text-parchment-50 mb-4">Order of the Day</h3>
+          <ul class="space-y-3 text-sm text-parchment-200">
+            <li class="flex justify-between gap-2 border-b border-obsidian-600/80 pb-2">
+              <span class="font-medium text-rust-300 shrink-0">11:30 AM</span>
+              <span class="text-right">Guest Arrival</span>
+            </li>
+            <li class="flex justify-between gap-2 border-b border-obsidian-600/80 pb-2">
+              <span class="font-medium text-rust-300 shrink-0">12:00 PM</span>
+              <span class="text-right">The Wedding</span>
+            </li>
+            <li class="flex justify-between gap-2 border-b border-obsidian-600/80 pb-2">
+              <span class="font-medium text-rust-300 shrink-0">1:00 PM – 3:00 PM</span>
+              <span class="text-right">Drinks &amp; Canapés</span>
+            </li>
+            <li class="flex justify-between gap-2 border-b border-obsidian-600/80 pb-2">
+              <span class="font-medium text-rust-300 shrink-0">3:00 PM</span>
+              <span class="text-right">Wedding Breakfast &amp; Speeches</span>
+            </li>
+            <li class="flex justify-between gap-2 border-b border-obsidian-600/80 pb-2">
+              <span class="font-medium text-rust-300 shrink-0">5:00 PM – 7:00 PM</span>
+              <span class="text-right">Drinks</span>
+            </li>
+            <li class="flex justify-between gap-2 border-b border-obsidian-600/80 pb-2">
+              <span class="font-medium text-rust-300 shrink-0">7:00 PM</span>
+              <span class="text-right">Evening Guests Arrive</span>
+            </li>
+            <li class="flex justify-between gap-2">
+              <span class="font-medium text-rust-300 shrink-0">7:30 PM – 12:00 AM</span>
+              <span class="text-right font-semibold text-brass-300">PARTY!</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: Venue Location -->
+      <div class="bg-obsidian-800 border border-obsidian-600 rounded-2xl p-7 shadow-card hover:border-brass-500/60 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-11 h-11 rounded-full bg-rust-900/70 border border-rust-500/40 text-rust-300 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.418 0-8-5.373-8-10a8 8 0 1116 0c0 4.627-3.582 10-8 10z" />
+              <circle cx="12" cy="11" r="2.5" />
+            </svg>
+          </div>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-brass-400 font-semibold mb-1.5">The Venue</p>
+          <h3 class="font-serif text-3xl text-parchment-50 mb-3">The Hare &amp; Hounds</h3>
+          <p class="text-sm text-parchment-200 leading-relaxed mb-4">
+            Westonbirt, Tetbury<br />
+            Gloucestershire GL8 8QL<br />
+            United Kingdom
+          </p>
+          <p class="text-xs text-parchment-400 italic leading-relaxed">
+            Complimentary guest parking is available on-site via the A433 entrance. Carriages at midnight.
+          </p>
+        </div>
+        <a
+          href="https://maps.google.com/?q=The+Hare+and+Hounds+Westonbirt+Tetbury+GL8+8QL"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-6 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-brass-300 font-semibold hover:text-rust-300 transition-colors"
+        >
+          <span>View Map</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M7 7h10v10" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Card 3: Stay & Travel -->
+      <div class="bg-obsidian-800 border border-obsidian-600 rounded-2xl p-7 shadow-card hover:border-brass-500/60 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-11 h-11 rounded-full bg-rust-900/70 border border-rust-500/40 text-rust-300 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-brass-400 font-semibold mb-1.5">Accommodation</p>
+          <h3 class="font-serif text-3xl text-parchment-50 mb-3">Stay &amp; Travel</h3>
+          <div class="p-3.5 rounded-xl bg-rust-900/45 border border-brass-500/45 mb-4">
+            <p class="text-xs text-parchment-100 leading-relaxed">
+              Rooms are available by telephone booking only, using code <span class="inline-block px-2 py-0.5 rounded bg-obsidian-950 border border-brass-400 font-semibold tracking-wider text-brass-300">"Tucker"</span> to get 20% discount.
+            </p>
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <a
+              href="tel:01666881000"
+              class="flex items-center gap-2 text-brass-300 hover:text-rust-300 font-medium transition-colors"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>01666 881 000</span>
+            </a>
+            <a
+              href="https://www.cotswold-inns-hotels.co.uk/hare-and-hounds-hotel"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-start gap-2 text-brass-300 hover:text-rust-300 font-medium transition-colors break-all"
+            >
+              <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+              <span>cotswold-inns-hotels.co.uk/hare-and-hounds-hotel</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2B. HONEYMOON FUND SECTION -->
+  <section id="honeymoon" class="pb-20 sm:pb-28 px-4 sm:px-8 max-w-4xl mx-auto">
+    <div class="bg-obsidian-800/90 border border-brass-500/40 rounded-3xl p-8 sm:p-12 text-center shadow-card relative overflow-hidden">
+      <div class="w-12 h-12 rounded-full bg-rust-900/70 border border-brass-500/45 text-brass-300 mx-auto flex items-center justify-center mb-5">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+        </svg>
+      </div>
+      <span class="text-xs uppercase tracking-[0.3em] text-brass-400 font-semibold">Gifts &amp; Honeymoon</span>
+      <h2 class="font-display text-3xl sm:text-4xl text-parchment-50 mt-3 mb-5">Our Honeymoon Fund</h2>
+      <p class="font-serif italic text-xl sm:text-2xl text-parchment-100 max-w-2xl mx-auto leading-relaxed mb-7">
+        "Your presence at our wedding is the greatest gift of all, though if you wish to give something, a contribution toward our honeymoon would be warmly appreciated."
+      </p>
+
+      <!-- Bank Transfer Details Card -->
+      <div class="max-w-lg mx-auto bg-obsidian-900/95 border border-brass-500/35 rounded-2xl p-6 text-left space-y-3.5">
+        <div class="flex items-center justify-between gap-3 border-b border-obsidian-600/80 pb-3">
+          <div>
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-parchment-400">Account Name</span>
+            <span class="text-sm sm:text-base font-medium text-parchment-50">Jamie Tucker</span>
+          </div>
+          <button
+            type="button"
+            onclick="copyBankDetail('Jamie Tucker', this)"
+            class="text-[11px] uppercase tracking-[0.16em] px-3 py-1.5 rounded-lg border border-obsidian-600 bg-obsidian-800 hover:border-brass-400 text-brass-300 transition-colors"
+          >
+            Copy
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between gap-3 border-b border-obsidian-600/80 pb-3">
+          <div>
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-parchment-400">Sort Code</span>
+            <span class="text-sm sm:text-base font-mono font-medium text-parchment-50 tracking-wider">06-84-07</span>
+          </div>
+          <button
+            type="button"
+            onclick="copyBankDetail('06-84-07', this)"
+            class="text-[11px] uppercase tracking-[0.16em] px-3 py-1.5 rounded-lg border border-obsidian-600 bg-obsidian-800 hover:border-brass-400 text-brass-300 transition-colors"
+          >
+            Copy
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-parchment-400">Account Number</span>
+            <span class="text-sm sm:text-base font-mono font-medium text-parchment-50 tracking-wider">65048403</span>
+          </div>
+          <button
+            type="button"
+            onclick="copyBankDetail('65048403', this)"
+            class="text-[11px] uppercase tracking-[0.16em] px-3 py-1.5 rounded-lg border border-obsidian-600 bg-obsidian-800 hover:border-brass-400 text-brass-300 transition-colors"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <p class="mt-6 font-serif italic text-xl text-brass-200">
+        Thank you &#9962;&#10084;&#65039;
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. INTERACTIVE RSVP FORM SECTION -->
+  <section id="rsvp" class="py-20 sm:py-28 px-4 sm:px-8 bg-obsidian-950 border-y border-obsidian-600/80 relative overflow-hidden">
+    <!-- Subtle Atmospheric Ember Glow -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-rust-600/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-brass-500/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-[0.3em] text-brass-400 font-medium">Kindly Respond</span>
+        <h2 class="font-display text-3xl sm:text-5xl text-parchment-50 mt-3 mb-4">Will You Join Us?</h2>
+        <p class="text-parchment-300 text-sm sm:text-base max-w-xl mx-auto">
+          Please complete the form below by 28th February 2027 so we can reserve your seats and note any dietary requirements for your party.
+        </p>
+      </div>
+
+      <!-- RSVP Card Container -->
+      <div class="bg-obsidian-800 text-parchment-100 rounded-3xl p-6 sm:p-12 shadow-keepsake border border-brass-500/35">
+
+        <!-- Validation Banner (Hidden by default) -->
+        <div id="formErrorBanner" class="hidden mb-6 p-4 rounded-xl bg-rust-900/70 border border-rust-400/60 text-parchment-50 text-sm flex items-start gap-3">
+          <svg class="w-5 h-5 text-rust-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path stroke-linecap="round" d="M12 8v4m0 4h.01" />
+          </svg>
+          <span id="formErrorMessage">Please complete all required fields before submitting.</span>
+        </div>
+
+        <!-- THE FORM -->
+        <form id="rsvpForm" action="https://formspree.io/f/xljbpqaq" method="POST" novalidate class="space-y-7">
+          <input type="hidden" id="editingId" value="" />
+
+          <!-- Primary Guest Name -->
+          <div>
+            <label for="primaryName" class="block text-xs uppercase tracking-[0.18em] text-parchment-300 font-semibold mb-2">
+              Primary Guest Full Name <span class="text-rust-400">*</span>
+            </label>
+            <input
+              type="text"
+              id="primaryName"
+              name="primaryName"
+              data-fs-field
+              required
+              placeholder="e.g., Eleanor Vance"
+              class="editorial-input w-full px-4 py-3.5 rounded-xl bg-obsidian-900 border border-obsidian-600 text-parchment-50 placeholder:text-parchment-400/45 text-sm"
+            />
+          </div>
+
+          <!-- Attendance Radio Toggle -->
+          <div>
+            <span class="block text-xs uppercase tracking-[0.18em] text-parchment-300 font-semibold mb-3">
+              Your Response <span class="text-rust-400">*</span>
+            </span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="cursor-pointer relative">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="accept"
+                  checked
+                  onchange="handleAttendanceChange()"
+                  class="peer sr-only"
+                />
+                <div class="p-4 rounded-2xl border-2 border-obsidian-600 bg-obsidian-900/70 peer-checked:border-rust-500 peer-checked:bg-rust-900/35 transition-all flex items-center gap-3.5">
+                  <div class="w-5 h-5 rounded-full border-2 border-parchment-400/60 peer-checked:border-rust-400 flex items-center justify-center shrink-0">
+                    <div class="w-2.5 h-2.5 rounded-full bg-rust-400 opacity-0 transition-opacity check-dot"></div>
+                  </div>
+                  <div>
+                    <p class="font-serif text-2xl font-medium text-parchment-50">Joyfully Accepts</p>
+                    <p class="text-xs text-parchment-300">Wouldn't miss it for the world</p>
+                  </div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer relative">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="decline"
+                  onchange="handleAttendanceChange()"
+                  class="peer sr-only"
+                />
+                <div class="p-4 rounded-2xl border-2 border-obsidian-600 bg-obsidian-900/70 peer-checked:border-brass-400 peer-checked:bg-obsidian-700/80 transition-all flex items-center gap-3.5">
+                  <div class="w-5 h-5 rounded-full border-2 border-parchment-400/60 flex items-center justify-center shrink-0">
+                    <div class="w-2.5 h-2.5 rounded-full bg-brass-400 opacity-0 transition-opacity check-dot"></div>
+                  </div>
+                  <div>
+                    <p class="font-serif text-2xl font-medium text-parchment-50">Regretfully Declines</p>
+                    <p class="text-xs text-parchment-300">Celebrating with you from afar</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- DYNAMIC SECTION: Shown only if "Joyfully Accepts" is selected -->
+          <div id="attendingFields" class="space-y-7 pt-4 border-t border-obsidian-600/80 transition-all duration-300">
+            <!-- Number of Guests Selector -->
+            <div>
+              <label for="guestCount" class="block text-xs uppercase tracking-[0.18em] text-parchment-300 font-semibold mb-2">
+                Number of Guests in Your Party (1 – 4)
+              </label>
+              <div class="grid grid-cols-4 gap-3">
+                <button type="button" onclick="setGuestCount(1)" data-count="1" class="guest-count-btn py-3 rounded-xl border border-rust-500 bg-rust-500 text-parchment-50 font-medium text-sm transition-all">
+                  1 Guest
+                </button>
+                <button type="button" onclick="setGuestCount(2)" data-count="2" class="guest-count-btn py-3 rounded-xl border border-obsidian-600 bg-obsidian-900 text-parchment-200 hover:border-brass-500/60 font-medium text-sm transition-all">
+                  2 Guests
+                </button>
+                <button type="button" onclick="setGuestCount(3)" data-count="3" class="guest-count-btn py-3 rounded-xl border border-obsidian-600 bg-obsidian-900 text-parchment-200 hover:border-brass-500/60 font-medium text-sm transition-all">
+                  3 Guests
+                </button>
+                <button type="button" onclick="setGuestCount(4)" data-count="4" class="guest-count-btn py-3 rounded-xl border border-obsidian-600 bg-obsidian-900 text-parchment-200 hover:border-brass-500/60 font-medium text-sm transition-all">
+                  4 Guests
+                </button>
+              </div>
+              <input type="hidden" id="guestCount" value="1" />
+            </div>
+
+            <!-- Dynamic Guest Details Container -->
+            <div id="dynamicGuestsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Dietary Restrictions -->
+            <div>
+              <label for="dietaryNotes" class="block text-xs uppercase tracking-[0.18em] text-parchment-300 font-semibold mb-2">
+                Dietary Requirements / Allergies
+              </label>
+              <input
+                type="text"
+                id="dietaryNotes"
+                name="dietaryNotes"
+                data-fs-field
+                placeholder="e.g., Vegetarian, nut allergy, coeliac, none"
+                class="editorial-input w-full px-4 py-3.5 rounded-xl bg-obsidian-900 border border-obsidian-600 text-parchment-50 placeholder:text-parchment-400/45 text-sm"
+              />
+            </div>
+          </div>
+
+          <!-- Message / Note for the Couple (Always visible) -->
+          <div>
+            <label for="coupleNote" class="block text-xs uppercase tracking-[0.18em] text-parchment-300 font-semibold mb-2">
+              Note or Warm Wishes for Sarah &amp; Jamie
+            </label>
+            <textarea
+              id="coupleNote"
+              name="coupleNote"
+              data-fs-field
+              rows="3"
+              placeholder="Share a favourite memory, marriage advice, or a celebratory toast..."
+              class="editorial-input w-full px-4 py-3.5 rounded-xl bg-obsidian-900 border border-obsidian-600 text-parchment-50 placeholder:text-parchment-400/45 text-sm resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button
+              type="submit"
+              data-fs-submit-btn
+              class="w-full py-4 px-8 rounded-full bg-rust-500 hover:bg-rust-600 text-parchment-50 text-xs sm:text-sm uppercase tracking-[0.24em] font-medium transition-all duration-300 shadow-lg shadow-black/50 border border-rust-300/30 flex items-center justify-center gap-2.5"
+            >
+              <span id="submitBtnText">Send RSVP Response</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- CELEBRATORY CONFIRMATION STATE (Hidden until submitted) -->
+        <div id="confirmationState" class="hidden text-center py-6 animate-fade-up">
+          <div class="w-16 h-16 rounded-full bg-rust-900/70 text-brass-300 mx-auto flex items-center justify-center mb-6 border border-brass-500/45">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+
+          <p class="text-xs uppercase tracking-[0.28em] text-brass-400 font-semibold mb-2">RSVP Confirmed</p>
+          <h3 id="confirmHeadline" class="font-serif text-3xl sm:text-4xl text-parchment-50 mb-3">
+            We Can't Wait to Celebrate With You!
+          </h3>
+          <p id="confirmSubtext" class="text-sm text-parchment-300 max-w-md mx-auto mb-8">
+            A summary of your response has been recorded in our wedding guestbook.
+          </p>
+
+          <!-- Summary Receipt Card -->
+          <div id="confirmSummaryBox" class="text-left bg-obsidian-900 border border-obsidian-600 rounded-2xl p-6 max-w-lg mx-auto mb-8 space-y-3 text-sm">
+            <!-- Filled dynamically -->
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              type="button"
+              onclick="editLastResponse()"
+              class="w-full sm:w-auto px-6 py-3 rounded-full border border-brass-500/60 text-brass-200 hover:bg-obsidian-700 text-xs uppercase tracking-[0.18em] font-medium transition-all"
+            >
+              Edit Response
+            </button>
+            <button
+              type="button"
+              onclick="resetFormForNew()"
+              class="w-full sm:w-auto px-6 py-3 rounded-full bg-rust-500 hover:bg-rust-600 text-parchment-50 text-xs uppercase tracking-[0.18em] font-medium transition-all"
+            >
+              Submit Another Party
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. NOTES & WISHES GUESTBOOK WALL -->
+  <section id="wishes" class="py-20 sm:py-28 px-4 sm:px-8 max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs uppercase tracking-[0.3em] text-brass-400 font-semibold">Guestbook</span>
+      <h2 class="font-display text-3xl sm:text-5xl text-parchment-50 mt-3 mb-4">Notes &amp; Warm Wishes</h2>
+      <p class="text-parchment-300 text-sm sm:text-base">
+        Words of love, memories, and celebratory toasts shared by our favourite people.
+      </p>
+    </div>
+
+    <div id="wishesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Populated dynamically via JS -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-obsidian-600/80 bg-obsidian-950 py-12 px-4 sm:px-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div class="font-display text-lg tracking-[0.22em] text-parchment-200">
+        SARAH <span class="font-serif italic text-brass-400">&amp;</span> JAMIE &bull; 04.09.2027
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <p class="text-xs font-serif italic text-parchment-400 text-base">
+          We cannot wait to celebrate with you in the Cotswolds.
+        </p>
+        <button
+          type="button"
+          onclick="toggleHostModal(true)"
+          class="text-xs uppercase tracking-[0.18em] px-4 py-2 rounded-full border border-obsidian-600 text-parchment-400 hover:text-brass-300 hover:border-brass-500/50 transition-colors"
+        >
+          Couple's View
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRIVATE HOST PASSCODE MODAL -->
+  <div
+    id="passcodeModal"
+    class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="bg-obsidian-800 border border-brass-500/45 rounded-3xl max-w-sm w-full p-7 shadow-2xl animate-fade-up text-parchment-100">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-[10px] uppercase tracking-[0.26em] text-brass-400 font-semibold">Private Access</span>
+        <button
+          type="button"
+          onclick="closePasscodeModal()"
+          class="w-8 h-8 rounded-full bg-obsidian-900 hover:bg-obsidian-700 border border-obsidian-600 text-parchment-300 flex items-center justify-center"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+      </div>
+      <h3 class="font-display text-xl text-parchment-50 mb-2">Couple's Dashboard</h3>
+      <p class="text-xs text-parchment-300 mb-5 leading-relaxed">
+        Enter your host passcode to view the private guest list and dietary notes.
+      </p>
+      <form id="passcodeForm" class="space-y-4">
+        <input
+          type="password"
+          id="hostPasscodeInput"
+          placeholder="Enter passcode"
+          autocomplete="off"
+          class="editorial-input w-full px-4 py-3 rounded-xl bg-obsidian-900 border border-obsidian-600 text-parchment-50 text-sm tracking-widest"
+        />
+        <p id="passcodeError" class="hidden text-xs text-rust-300">Incorrect passcode. Please try again.</p>
+        <button
+          type="submit"
+          class="w-full py-3 rounded-full bg-rust-500 hover:bg-rust-600 text-parchment-50 text-xs uppercase tracking-[0.2em] font-medium transition-all"
+        >
+          Unlock Guest List
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- COUPLE'S HOST DASHBOARD MODAL -->
+  <div
+    id="hostModal"
+    class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="bg-obsidian-800 border border-brass-500/45 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-fade-up">
+      <!-- Modal Header -->
+      <div class="px-6 sm:px-8 py-5 bg-obsidian-950 border-b border-obsidian-600 text-parchment-50 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.26em] text-brass-400 block">Host Dashboard &bull; Passcode Protected</span>
+          <h3 class="font-display text-2xl sm:text-3xl">Sarah &amp; Jamie's Guest List</h3>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <button
+            type="button"
+            onclick="lockHostDashboard()"
+            class="text-xs uppercase tracking-[0.16em] px-3.5 py-2 rounded-full border border-obsidian-600 hover:border-brass-400 text-parchment-300 hover:text-brass-200 transition-colors"
+            title="Lock Couple's View"
+          >
+            Lock
+          </button>
+          <button
+            type="button"
+            onclick="toggleHostModal(false)"
+            class="w-10 h-10 rounded-full bg-obsidian-800 hover:bg-obsidian-700 border border-obsidian-600 text-parchment-200 flex items-center justify-center transition-colors"
+            aria-label="Close Dashboard"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Scrollable Content -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-8 text-parchment-100">
+        <!-- Key Metrics Summary -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="bg-obsidian-900 border border-obsidian-600 rounded-2xl p-4">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-parchment-400">Attending</p>
+            <p id="statAttending" class="font-display text-3xl sm:text-4xl font-semibold text-rust-400 mt-1">0</p>
+          </div>
+          <div class="bg-obsidian-900 border border-obsidian-600 rounded-2xl p-4">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-parchment-400">Declined</p>
+            <p id="statDeclined" class="font-display text-3xl sm:text-4xl font-semibold text-parchment-100 mt-1">0</p>
+          </div>
+          <div class="bg-obsidian-900 border border-obsidian-600 rounded-2xl p-4">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-parchment-400">Total Responses</p>
+            <p id="statTotalResponses" class="font-display text-3xl sm:text-4xl font-semibold text-parchment-100 mt-1">0</p>
+          </div>
+          <div class="bg-obsidian-900 border border-obsidian-600 rounded-2xl p-4">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-parchment-400">Dietary Notes</p>
+            <p id="statDietary" class="font-display text-3xl sm:text-4xl font-semibold text-brass-300 mt-1">0</p>
+          </div>
+        </div>
+
+        <!-- Guest Responses List -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <h4 class="font-serif text-2xl text-parchment-50">Submitted Responses</h4>
+            <div class="flex items-center gap-3">
+              <span id="cloudSyncBadge" class="text-[11px] uppercase tracking-[0.14em] px-3 py-1 rounded-full bg-obsidian-900 text-brass-300 border border-brass-500/40 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-rust-400 animate-pulse"></span>
+                <span>Connecting...</span>
+              </span>
+              <button
+                type="button"
+                onclick="exportRsvpsToCsv()"
+                class="text-xs px-3.5 py-1.5 rounded-full bg-rust-500 hover:bg-rust-600 text-parchment-50 font-medium transition-colors"
+              >
+                Export CSV
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto rounded-2xl border border-obsidian-600 bg-obsidian-900">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="border-b border-obsidian-600 bg-obsidian-950/70 text-[11px] uppercase tracking-[0.15em] text-parchment-400">
+                  <th class="py-3.5 px-4 font-semibold">Guest Names</th>
+                  <th class="py-3.5 px-4 font-semibold">Status</th>
+                  <th class="py-3.5 px-4 font-semibold">Dietary Notes</th>
+                  <th class="py-3.5 px-4 font-semibold text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="dashboardTableBody" class="divide-y divide-obsidian-600/80">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC WITH REAL-TIME CLOUD SYNC -->
+  <script>
+    // Formspree Endpoint for Instant Email Alerts
+    var FORMSPREE_ENDPOINT = 'https://formspree.io/f/xljbpqaq';
+
+    // Private Host Passcode (Change '040927' to any secret code you prefer)
+    var HOST_PASSCODE = '040927';
+    var isHostUnlocked = false;
+    var rsvpRecords = [];
+    var lastSubmittedId = null;
+
+    // Cloud Storage Bridge (Populated by Firebase module below when available)
+    var cloudStore = {
+      ready: false,
+      saveRecord: null,
+      deleteRecord: null
+    };
+
+    // Copy Bank Details Helper
+    window.copyBankDetail = function (text, btn) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).catch(function () {});
+      } else {
+        var tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+      }
+      if (btn) {
+        var originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('border-brass-400', 'text-brass-200');
+        setTimeout(function () {
+          btn.textContent = originalText;
+          btn.classList.remove('border-brass-400', 'text-brass-200');
+        }, 1600);
+      }
+    };
+
+    // Sync Badge Helper
+    function updateSyncBadge(connected, labelText) {
+      var badge = document.getElementById('cloudSyncBadge');
+      if (!badge) return;
+      badge.innerHTML =
+        '<span class="w-1.5 h-1.5 rounded-full ' +
+        (connected ? 'bg-emerald-400' : 'bg-rust-400 animate-pulse') +
+        '"></span><span>' +
+        escapeHtml(labelText) +
+        '</span>';
+    }
+
+    // HTML Escape Helper
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // Live Countdown to 4th September 2027 at 12:00 PM
+    function updateCountdown() {
+      var targetDate = new Date('2027-09-04T12:00:00').getTime();
+      var now = Date.now();
+      var diff = Math.max(0, targetDate - now);
+
+      var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      var mins = Math.floor((diff / (1000 * 60)) % 60);
+
+      var dEl = document.getElementById('cd-days');
+      var hEl = document.getElementById('cd-hours');
+      var mEl = document.getElementById('cd-mins');
+      if (dEl) dEl.textContent = days;
+      if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+      if (mEl) mEl.textContent = String(mins).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 30000);
+
+    // Couple's View Passcode & Modal Controls
+    function openPasscodeModal() {
+      var modal = document.getElementById('passcodeModal');
+      var input = document.getElementById('hostPasscodeInput');
+      var err = document.getElementById('passcodeError');
+      if (err) err.classList.add('hidden');
+      if (input) input.value = '';
+      if (modal) modal.classList.remove('hidden');
+      setTimeout(function () {
+        if (input) input.focus();
+      }, 60);
+    }
+
+    window.closePasscodeModal = function () {
+      var modal = document.getElementById('passcodeModal');
+      if (modal) modal.classList.add('hidden');
+    };
+
+    window.lockHostDashboard = function () {
+      isHostUnlocked = false;
+      var modal = document.getElementById('hostModal');
+      if (modal) modal.classList.add('hidden');
+    };
+
+    window.toggleHostModal = function (open) {
+      var modal = document.getElementById('hostModal');
+      if (!modal) return;
+      if (open) {
+        if (!isHostUnlocked) {
+          openPasscodeModal();
+          return;
+        }
+        renderAll();
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    };
+
+    var passcodeFormEl = document.getElementById('passcodeForm');
+    if (passcodeFormEl) {
+      passcodeFormEl.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = document.getElementById('hostPasscodeInput');
+        var err = document.getElementById('passcodeError');
+        if (input && input.value.trim() === HOST_PASSCODE) {
+          isHostUnlocked = true;
+          window.closePasscodeModal();
+          window.toggleHostModal(true);
+        } else if (err) {
+          err.classList.remove('hidden');
+        }
+      });
+    }
+
+    // Secret 5-Tap Trigger or Smooth Scroll on S & J Monogram
+    var monogramBtn = document.getElementById('monogramTrigger');
+    if (monogramBtn) {
+      var tapCount = 0;
+      var tapResetTimer = null;
+      monogramBtn.addEventListener('click', function () {
+        tapCount += 1;
+        clearTimeout(tapResetTimer);
+        if (tapCount >= 5) {
+          tapCount = 0;
+          window.toggleHostModal(true);
+          return;
+        }
+        tapResetTimer = setTimeout(function () {
+          tapCount = 0;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 450);
+      });
+    }
+
+    // Auto-prompt passcode if ?host=true is in URL
+    if (window.location.search.indexOf('host=true') !== -1) {
+      openPasscodeModal();
+    }
+
+    // Attendance Toggle Logic
+    window.handleAttendanceChange = function () {
+      var selected = document.querySelector('input[name="attendance"]:checked');
+      var attendingFields = document.getElementById('attendingFields');
+      var value = selected ? selected.value : 'accept';
+
+      document.querySelectorAll('input[name="attendance"]').forEach(function (radio) {
+        var dot = radio.parentElement.querySelector('.check-dot');
+        if (dot) {
+          dot.style.opacity = radio.checked ? '1' : '0';
+        }
+      });
+
+      if (attendingFields) {
+        if (value === 'accept') {
+          attendingFields.classList.remove('hidden');
+        } else {
+          attendingFields.classList.add('hidden');
+        }
+      }
+    };
+
+    // Dynamic Guest Party Inputs (1 - 4)
+    window.setGuestCount = function (count, existingGuests) {
+      var countInput = document.getElementById('guestCount');
+      if (countInput) countInput.value = String(count);
+
+      document.querySelectorAll('.guest-count-btn').forEach(function (btn) {
+        var btnCount = parseInt(btn.getAttribute('data-count'), 10);
+        if (btnCount === count) {
+          btn.className =
+            'guest-count-btn py-3 rounded-xl border border-rust-500 bg-rust-500 text-parchment-50 font-medium text-sm transition-all';
+        } else {
+          btn.className =
+            'guest-count-btn py-3 rounded-xl border border-obsidian-600 bg-obsidian-900 text-parchment-200 hover:border-brass-500/60 font-medium text-sm transition-all';
+        }
+      });
+
+      var container = document.getElementById('dynamicGuestsContainer');
+      if (!container) return;
+
+      var primaryVal = (document.getElementById('primaryName') || {}).value || '';
+      var currentInputs = container.querySelectorAll('input[data-guest-index]');
+      var preserved = [];
+      currentInputs.forEach(function (inp) {
+        preserved.push(inp.value);
+      });
+
+      var html = '';
+      for (var i = 0; i < count; i++) {
+        var label = i === 0 ? 'Guest 1 (Primary)' : 'Guest ' + (i + 1) + ' Full Name';
+        var val = '';
+        if (existingGuests && existingGuests[i]) {
+          val = existingGuests[i].name || '';
+        } else if (preserved[i]) {
+          val = preserved[i];
+        } else if (i === 0 && primaryVal) {
+          val = primaryVal;
+        }
+
+        html +=
+          '<div>' +
+          '<label class="block text-[11px] uppercase tracking-[0.16em] text-parchment-400 font-semibold mb-1.5">' +
+          escapeHtml(label) +
+          ' <span class="text-rust-400">*</span></label>' +
+          '<input type="text" data-guest-index="' +
+          i +
+          '" value="' +
+          escapeHtml(val) +
+          '" placeholder="Full name" class="editorial-input w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-obsidian-600 text-parchment-50 placeholder:text-parchment-400/45 text-sm" />' +
+          '</div>';
+      }
+      container.innerHTML = html;
+    };
+
+    // Keep Guest 1 synced with Primary Guest Name if untouched
+    var primaryNameEl = document.getElementById('primaryName');
+    if (primaryNameEl) {
+      primaryNameEl.addEventListener('input', function (e) {
+        var g1 = document.querySelector('input[data-guest-index="0"]');
+        if (g1 && (!g1.dataset.manual || g1.value === '')) {
+          g1.value = e.target.value;
+        }
+      });
+    }
+
+    // Render Guestbook Wall & Couple's Dashboard
+    function renderAll() {
+      renderWishesWall();
+      renderDashboard();
+    }
+
+    function renderWishesWall() {
+      var grid = document.getElementById('wishesGrid');
+      if (!grid) return;
+
+      var notesList = rsvpRecords.filter(function (r) {
+        return r.note && r.note.trim().length > 0;
+      });
+
+      if (notesList.length === 0) {
+        grid.innerHTML =
+          '<div class="col-span-full text-center py-12 px-6 rounded-2xl bg-obsidian-800/60 border border-obsidian-600/80">' +
+          '<p class="font-serif italic text-2xl text-parchment-300">No wishes shared yet — be the first to leave a celebratory toast when you RSVP!</p>' +
+          '</div>';
+        return;
+      }
+
+      grid.innerHTML = notesList
+        .map(function (r) {
+          var badge =
+            r.attendance === 'accept'
+              ? '<span class="text-[10px] uppercase tracking-[0.18em] text-brass-300">Attending</span>'
+              : '<span class="text-[10px] uppercase tracking-[0.18em] text-parchment-400">Sending Love</span>';
+          return (
+            '<article class="bg-obsidian-800 border border-obsidian-600 rounded-2xl p-6 shadow-card flex flex-col justify-between">' +
+            '<p class="font-serif italic text-xl text-parchment-100 leading-relaxed mb-5">&ldquo;' +
+            escapeHtml(r.note) +
+            '&rdquo;</p>' +
+            '<div class="flex items-center justify-between pt-4 border-t border-obsidian-600/80">' +
+            '<span class="text-xs font-medium tracking-wider text-parchment-200">' +
+            escapeHtml(r.primaryName) +
+            '</span>' +
+            badge +
+            '</div>' +
+            '</article>'
+          );
+        })
+        .join('');
+    }
+
+    function renderDashboard() {
+      var tbody = document.getElementById('dashboardTableBody');
+      if (!tbody) return;
+
+      var totalAttendingGuests = 0;
+      var totalDeclinedParties = 0;
+      var totalDietaryNotes = 0;
+
+      rsvpRecords.forEach(function (r) {
+        if (r.attendance === 'accept') {
+          var partySize = Array.isArray(r.guests) && r.guests.length > 0 ? r.guests.length : 1;
+          totalAttendingGuests += partySize;
+          if (r.dietary && r.dietary !== 'None' && r.dietary !== 'N/A' && r.dietary.trim() !== '') {
+            totalDietaryNotes += 1;
+          }
+        } else {
+          totalDeclinedParties += 1;
+        }
+      });
+
+      var statAtt = document.getElementById('statAttending');
+      var statDec = document.getElementById('statDeclined');
+      var statTot = document.getElementById('statTotalResponses');
+      var statDie = document.getElementById('statDietary');
+
+      if (statAtt) statAtt.textContent = totalAttendingGuests;
+      if (statDec) statDec.textContent = totalDeclinedParties;
+      if (statTot) statTot.textContent = rsvpRecords.length;
+      if (statDie) statDie.textContent = totalDietaryNotes;
+
+      if (rsvpRecords.length === 0) {
+        tbody.innerHTML =
+          '<tr><td colspan="4" class="py-8 px-4 text-center text-parchment-400 text-xs uppercase tracking-[0.18em]">No responses recorded yet.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = rsvpRecords
+        .map(function (r) {
+          var namesHtml =
+            r.attendance === 'accept' && Array.isArray(r.guests) && r.guests.length > 0
+              ? r.guests
+                  .map(function (g) {
+                    return escapeHtml(g.name);
+                  })
+                  .join(', ')
+              : escapeHtml(r.primaryName);
+
+          var statusPill =
+            r.attendance === 'accept'
+              ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-emerald-950/80 text-emerald-300 border border-emerald-500/40">Attending (' +
+                (Array.isArray(r.guests) ? r.guests.length : 1) +
+                ')</span>'
+              : '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-obsidian-800 text-parchment-400 border border-obsidian-600">Declined</span>';
+
+          return (
+            '<tr class="hover:bg-obsidian-800/50 transition-colors">' +
+            '<td class="py-3.5 px-4 font-medium text-parchment-100">' +
+            namesHtml +
+            '</td>' +
+            '<td class="py-3.5 px-4">' +
+            statusPill +
+            '</td>' +
+            '<td class="py-3.5 px-4 text-parchment-300">' +
+            escapeHtml(r.dietary || 'None') +
+            '</td>' +
+            '<td class="py-3.5 px-4 text-right">' +
+            '<button type="button" onclick="deleteRecord(\'' +
+            escapeHtml(r.id) +
+            '\')" class="text-xs text-rust-300 hover:text-rust-400 underline">Remove</button>' +
+            '</td>' +
+            '</tr>'
+          );
+        })
+        .join('');
+    }
+
+    window.deleteRecord = async function (id) {
+      if (cloudStore.ready && typeof cloudStore.deleteRecord === 'function') {
+        try {
+          await cloudStore.deleteRecord(id);
+          return;
+        } catch (err) {
+          console.error('Cloud delete error:', err);
+        }
+      }
+      rsvpRecords = rsvpRecords.filter(function (r) {
+        return r.id !== id;
+      });
+      renderAll();
+    };
+
+    window.exportRsvpsToCsv = function () {
+      var rows = [['Primary Contact', 'Status', 'Party Size', 'Guest Names', 'Dietary Requirements', 'Note', 'Submitted']];
+      rsvpRecords.forEach(function (r) {
+        var guestNames =
+          r.attendance === 'accept' && Array.isArray(r.guests)
+            ? r.guests
+                .map(function (g) {
+                  return g.name;
+                })
+                .join(' | ')
+            : r.primaryName;
+        rows.push([
+          r.primaryName || '',
+          r.attendance === 'accept' ? 'Attending' : 'Declined',
+          r.attendance === 'accept' && Array.isArray(r.guests) ? r.guests.length : 0,
+          guestNames,
+          r.dietary || 'None',
+          r.note || '',
+          r.submittedAt || '',
+        ]);
+      });
+
+      var csvContent = rows
+        .map(function (row) {
+          return row
+            .map(function (cell) {
+              return '"' + String(cell).replace(/"/g, '""') + '"';
+            })
+            .join(',');
+        })
+        .join('\n');
+
+      var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'sarah-and-jamie-wedding-rsvps.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    };
+
+    // RSVP Form Submission Handler (Async for Cloud & Formspree)
+    var rsvpFormEl = document.getElementById('rsvpForm');
+    if (rsvpFormEl) {
+      rsvpFormEl.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        var errorBanner = document.getElementById('formErrorBanner');
+        var errorMsg = document.getElementById('formErrorMessage');
+        if (errorBanner) errorBanner.classList.add('hidden');
+
+        var primaryName = (document.getElementById('primaryName').value || '').trim();
+        var attendanceRadio = document.querySelector('input[name="attendance"]:checked');
+        var attendance = attendanceRadio ? attendanceRadio.value : 'accept';
+        var dietary = (document.getElementById('dietaryNotes').value || '').trim() || 'None';
+        var note = (document.getElementById('coupleNote').value || '').trim();
+        var editingId = (document.getElementById('editingId').value || '').trim();
+
+        if (!primaryName) {
+          if (errorMsg) errorMsg.textContent = 'Please enter the primary guest full name.';
+          if (errorBanner) errorBanner.classList.remove('hidden');
+          return;
+        }
+
+        var guests = [];
+        if (attendance === 'accept') {
+          var guestInputs = document.querySelectorAll('#dynamicGuestsContainer input[data-guest-index]');
+          for (var i = 0; i < guestInputs.length; i++) {
+            var gName = (guestInputs[i].value || '').trim();
+            if (!gName) {
+              if (errorMsg) errorMsg.textContent = 'Please enter full names for all guests in your party.';
+              if (errorBanner) errorBanner.classList.remove('hidden');
+              return;
+            }
+            guests.push({ name: gName });
+          }
+        }
+
+        var submitBtn = rsvpFormEl.querySelector('button[type="submit"]');
+        var submitBtnText = document.getElementById('submitBtnText');
+        if (submitBtn) submitBtn.disabled = true;
+        if (submitBtnText) submitBtnText.textContent = 'Sending RSVP...';
+
+        var formattedDate = new Date().toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        });
+
+        var savedRecord = {
+          id: editingId || 'rsvp-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7),
+          primaryName: primaryName,
+          attendance: attendance,
+          guests: guests,
+          dietary: attendance === 'accept' ? dietary : 'N/A',
+          note: note,
+          submittedAt: formattedDate,
+          createdAt: Date.now(),
+        };
+
+        try {
+          // 1. Save to Real-Time Cloud Database (if connected)
+          if (cloudStore.ready && typeof cloudStore.saveRecord === 'function') {
+            await cloudStore.saveRecord(savedRecord);
+          } else {
+            var existingIndex = rsvpRecords.findIndex(function (r) {
+              return r.id === editingId;
+            });
+            if (existingIndex !== -1) {
+              rsvpRecords[existingIndex] = savedRecord;
+            } else {
+              rsvpRecords.unshift(savedRecord);
+            }
+            renderAll();
+          }
+
+          // 2. Also dispatch email notification via Formspree
+          if (typeof FORMSPREE_ENDPOINT === 'string' && FORMSPREE_ENDPOINT.indexOf('http') === 0) {
+            var guestNamesFormatted =
+              attendance === 'accept' && guests.length > 0
+                ? guests
+                    .map(function (g) {
+                      return g.name;
+                    })
+                    .join(', ')
+                : primaryName;
+
+            var fsResponse = await fetch(FORMSPREE_ENDPOINT, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+              },
+              body: JSON.stringify({
+                _subject:
+                  'Wedding RSVP: ' +
+                  primaryName +
+                  ' (' +
+                  (attendance === 'accept' ? 'Attending' : 'Declined') +
+                  ')',
+                'Primary Contact': primaryName,
+                Response: attendance === 'accept' ? 'Joyfully Accepts' : 'Regretfully Declines',
+                'Party Size': attendance === 'accept' ? guests.length : 0,
+                'Guest Names': guestNamesFormatted,
+                'Dietary Requirements': attendance === 'accept' ? dietary : 'N/A',
+                'Note / Warm Wishes': note || 'None',
+                'Submitted On': formattedDate,
+              }),
+            });
+
+            if (!fsResponse.ok && !cloudStore.ready) {
+              throw new Error('Formspree submission failed');
+            }
+          }
+
+          lastSubmittedId = savedRecord.id;
+          showConfirmation(savedRecord);
+        } catch (err) {
+          console.error('RSVP error:', err);
+          if (errorMsg) {
+            errorMsg.textContent =
+              'There was an issue sending your RSVP. Please check your connection and try again.';
+          }
+          if (errorBanner) errorBanner.classList.remove('hidden');
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitBtnText) submitBtnText.textContent = 'Send RSVP Response';
+        }
+      });
+    }
+
+    function showConfirmation(record) {
+      var formEl = document.getElementById('rsvpForm');
+      var confirmEl = document.getElementById('confirmationState');
+      var headlineEl = document.getElementById('confirmHeadline');
+      var summaryBox = document.getElementById('confirmSummaryBox');
+
+      if (formEl) formEl.classList.add('hidden');
+      if (confirmEl) confirmEl.classList.remove('hidden');
+
+      if (headlineEl) {
+        headlineEl.textContent =
+          record.attendance === 'accept'
+            ? "We Can't Wait to Celebrate With You!"
+            : 'Thank You for Letting Us Know';
+      }
+
+      if (summaryBox) {
+        var partyNames =
+          record.attendance === 'accept' && Array.isArray(record.guests)
+            ? record.guests
+                .map(function (g) {
+                  return escapeHtml(g.name);
+                })
+                .join(', ')
+            : escapeHtml(record.primaryName);
+
+        summaryBox.innerHTML =
+          '<div class="flex justify-between gap-2"><span class="text-parchment-400">Primary Guest:</span><span class="font-medium text-parchment-100">' +
+          escapeHtml(record.primaryName) +
+          '</span></div>' +
+          '<div class="flex justify-between gap-2"><span class="text-parchment-400">Response:</span><span class="font-medium text-brass-300">' +
+          (record.attendance === 'accept' ? 'Joyfully Accepts' : 'Regretfully Declines') +
+          '</span></div>' +
+          (record.attendance === 'accept'
+            ? '<div class="flex justify-between gap-2"><span class="text-parchment-400">Party Guests:</span><span class="font-medium text-parchment-100 text-right">' +
+              partyNames +
+              '</span></div>' +
+              '<div class="flex justify-between gap-2"><span class="text-parchment-400">Dietary Notes:</span><span class="font-medium text-parchment-100 text-right">' +
+              escapeHtml(record.dietary) +
+              '</span></div>'
+            : '') +
+          (record.note
+            ? '<div class="pt-2 border-t border-obsidian-600/80"><span class="text-parchment-400 block mb-1">Your Note:</span><span class="italic font-serif text-base text-parchment-200">&ldquo;' +
+              escapeHtml(record.note) +
+              '&rdquo;</span></div>'
+            : '');
+      }
+    }
+
+    window.editLastResponse = function () {
+      var record = rsvpRecords.find(function (r) {
+        return r.id === lastSubmittedId;
+      });
+      if (!record) return;
+
+      document.getElementById('editingId').value = record.id;
+      document.getElementById('primaryName').value = record.primaryName || '';
+      var radio = document.querySelector('input[name="attendance"][value="' + record.attendance + '"]');
+      if (radio) radio.checked = true;
+      window.handleAttendanceChange();
+
+      if (record.attendance === 'accept') {
+        var count = Array.isArray(record.guests) && record.guests.length > 0 ? record.guests.length : 1;
+        window.setGuestCount(count, record.guests);
+        document.getElementById('dietaryNotes').value =
+          record.dietary && record.dietary !== 'None' ? record.dietary : '';
+      }
+      document.getElementById('coupleNote').value = record.note || '';
+
+      document.getElementById('confirmationState').classList.add('hidden');
+      document.getElementById('rsvpForm').classList.remove('hidden');
+    };
+
+    window.resetFormForNew = function () {
+      var formEl = document.getElementById('rsvpForm');
+      if (formEl) formEl.reset();
+      document.getElementById('editingId').value = '';
+      var acceptRadio = document.querySelector('input[name="attendance"][value="accept"]');
+      if (acceptRadio) acceptRadio.checked = true;
+      window.handleAttendanceChange();
+      window.setGuestCount(1);
+      document.getElementById('confirmationState').classList.add('hidden');
+      if (formEl) formEl.classList.remove('hidden');
+    };
+
+    // Initialize Page State
+    window.handleAttendanceChange();
+    window.setGuestCount(1);
+    updateSyncBadge(true, 'Formspree Email Sync');
+    renderAll();
+  </script>
+
+  <!-- CLOUD DATABASE REAL-TIME SYNC MODULE -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
+    import { getAuth, signInAnonymously, signInWithCustomToken } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
+    import { getFirestore, collection, doc, setDoc, deleteDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+
+    const DEFAULT_FIREBASE_CONFIG = {
+      apiKey: "AIzaSyB3Nmy_ZiV0RyweI8wbclUC_8-H72MHn24",
+      authDomain: "wedding-8dd1b.firebaseapp.com",
+      projectId: "wedding-8dd1b",
+      storageBucket: "wedding-8dd1b.firebasestorage.app",
+      messagingSenderId: "957597901919",
+      appId: "1:957597901919:web:099dbb287acadf56e3e7ea",
+      measurementId: "G-M0YBN5TMBG"
+    };
+
+    async function initCloudSync() {
+      try {
+        const useWorkspaceConfig = typeof __firebase_config !== 'undefined' && __firebase_config;
+        const firebaseConfig = useWorkspaceConfig ? JSON.parse(__firebase_config) : DEFAULT_FIREBASE_CONFIG;
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'sarah-jamie-wedding';
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        if (useWorkspaceConfig) {
+          const auth = getAuth(app);
+          if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+            await signInWithCustomToken(auth, __initial_auth_token);
+          } else {
+            await signInAnonymously(auth);
+          }
+        }
+
+        const rsvpsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'rsvps');
+
+        // Wire up Cloud Save & Delete handlers
+        cloudStore.saveRecord = async function (record) {
+          const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'rsvps', record.id);
+          await setDoc(docRef, record);
+        };
+
+        cloudStore.deleteRecord = async function (id) {
+          const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'rsvps', id);
+          await deleteDoc(docRef);
+        };
+
+        cloudStore.ready = true;
+        updateSyncBadge(true, 'Live Cloud Sync');
+
+        // Listen for real-time updates across all guests & devices
+        onSnapshot(
+          rsvpsCollection,
+          (snapshot) => {
+            const liveRecords = [];
+            snapshot.forEach((docSnap) => {
+              const data = docSnap.data();
+              if (data) {
+                liveRecords.push({ ...data, id: docSnap.id });
+              }
+            });
+            // Sort newest first in memory
+            liveRecords.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+            rsvpRecords = liveRecords;
+            renderAll();
+          },
+          (error) => {
+            console.error('Cloud listener error:', error);
+            updateSyncBadge(true, 'Formspree Email Sync');
+          }
+        );
+      } catch (err) {
+        console.warn('Running in Formspree-only mode:', err);
+      }
+    }
+
+    initCloudSync();
+  </script>
+</body>
+</html>
